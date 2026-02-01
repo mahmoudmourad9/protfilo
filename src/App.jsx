@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -10,9 +11,20 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+    useEffect(() => {
+        document.body.className = theme === 'light' ? 'light-mode' : '';
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    };
+
     return (
         <>
-            <Navbar />
+            <Navbar theme={theme} toggleTheme={toggleTheme} />
             <main>
                 <Hero />
                 <About />

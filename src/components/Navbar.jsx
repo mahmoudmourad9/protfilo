@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import { profile } from '../data/profile';
 
-function Navbar() {
+function Navbar({ theme, toggleTheme }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -21,18 +21,24 @@ function Navbar() {
             <div className="container">
                 <a href="#home" className="logo">{profile.name.split(' ')[0]}</a>
 
-                <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
-                    <li><a href="#home" onClick={(e) => scrollToSection(e, 'home')}>Home</a></li>
-                    <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About</a></li>
-                    <li><a href="#experience" onClick={(e) => scrollToSection(e, 'experience')}>Experience</a></li>
-                    <li><a href="#skills" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a></li>
-                    <li><a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>Projects</a></li>
-                    <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>Contact</a></li>
-                </ul>
+                <div className="nav-controls">
+                    <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
+                        <li><a href="#home" onClick={(e) => scrollToSection(e, 'home')}>Home</a></li>
+                        <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About</a></li>
+                        <li><a href="#experience" onClick={(e) => scrollToSection(e, 'experience')}>Experience</a></li>
+                        <li><a href="#skills" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a></li>
+                        <li><a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>Projects</a></li>
+                        <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>Contact</a></li>
+                    </ul>
 
-                <button className="mobile-toggle" onClick={toggleMenu}>
-                    {isOpen ? <FaTimes /> : <FaBars />}
-                </button>
+                    <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
+                        {theme === 'dark' ? <FaSun className="sun-icon" /> : <FaMoon className="moon-icon" />}
+                    </button>
+
+                    <button className="mobile-toggle" onClick={toggleMenu}>
+                        {isOpen ? <FaTimes /> : <FaBars />}
+                    </button>
+                </div>
             </div>
         </nav>
     );

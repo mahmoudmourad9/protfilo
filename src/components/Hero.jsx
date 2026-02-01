@@ -94,7 +94,7 @@ function Hero() {
                         <div className="phone-frame">
                             <div className="phone-notch"></div>
                             <div className="phone-screen">
-                                <img src="/profile.png" alt={profile.name} className="avatar" />
+                                <img src="/mahmoud.png" alt={profile.name} className="avatar" />
                             </div>
                         </div>
                         {/* Floating App Icons around phone */}

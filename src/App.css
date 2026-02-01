@@ -21,6 +21,41 @@
     align-items: center;
 }
 
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-gradient);
+    color: white;
+    transform: rotate(15deg);
+}
+
+.sun-icon {
+    color: #ffd700;
+}
+
+.moon-icon {
+    color: #c7d2fe;
+}
+
 .navbar .logo {
     font-size: 1.6rem;
     font-weight: 900;

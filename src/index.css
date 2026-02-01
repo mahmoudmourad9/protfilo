@@ -30,6 +30,28 @@
   --glow-accent: 0 0 40px rgba(155, 93, 229, 0.15);
 }
 
+.light-mode {
+  /* Light Theme Palette */
+  --bg-color: #f8f9fa;
+  --bg-secondary: #e9ecef;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+
+  /* Text */
+  --text-color: #1a1a2e;
+  --secondary-text: #4a5568;
+  --muted-text: #718096;
+
+  /* Glass Effect Inverted */
+  --glass-bg: rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  /* Adjusted Glows for Light Mode */
+  --glow-primary: 0 0 40px rgba(0, 245, 212, 0.25);
+  --glow-accent: 0 0 40px rgba(155, 93, 229, 0.25);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
