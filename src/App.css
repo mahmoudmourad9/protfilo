@@ -182,6 +182,13 @@
     background-clip: text;
 }
 
+.light-mode .hero-content h1 {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .hero-content .title {
     font-size: 2rem;
     background: var(--accent-gradient);
@@ -240,6 +247,11 @@
     border: 2px solid rgba(255, 255, 255, 0.15);
     color: white;
     backdrop-filter: blur(10px);
+}
+
+.light-mode .hero-buttons .btn-secondary {
+    color: var(--text-color);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .hero-buttons .btn-secondary:hover {
@@ -1245,7 +1257,7 @@
 /* ========== FOOTER ========== */
 .footer {
     background: var(--bg-color);
-    color: white;
+    color: var(--text-color);
     padding: 90px 0 45px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
